@@ -5,7 +5,7 @@ const app = express();
 
 // Routes
 app.get('/', (req, res) => {
-	res.json({ msg: 'welcome to the app' });
+	res.json({ message: 'welcome to the app' });
 });
 
 // Listen for request
