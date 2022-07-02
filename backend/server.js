@@ -1,7 +1,14 @@
+require('dotenv').config();
 const express = require('express');
 
 //Express app
 const app = express();
+
+// Middleware
+app.use((req, res, next) => {
+	console.log(req.path, req.method);
+	next();
+});
 
 // Routes
 app.get('/', (req, res) => {
@@ -9,4 +16,6 @@ app.get('/', (req, res) => {
 });
 
 // Listen for request
-app.listen(4000, () => console.log('listening on port 4000!!!'));
+app.listen(process.env.PORT, () =>
+	console.log('listening on port ', process.env.PORT)
+);
